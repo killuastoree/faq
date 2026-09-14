@@ -1,0 +1,2643 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Killua Store | Moda, Tecnologia e IA</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+
+--bg:#06070A;
+--bg2:#0E1016;
+
+--card:rgba(255,255,255,.05);
+
+--text:#FFFFFF;
+--text-soft:#B5BCD0;
+
+--blue:#00BFFF;
+--purple:#7C3AED;
+
+--gradient:
+linear-gradient(
+135deg,
+#00BFFF,
+#7C3AED
+);
+
+--shadow:
+0 0 25px rgba(0,191,255,.25);
+
+}
+
+.light-mode{
+
+--bg:#F5F7FB;
+--bg2:#FFFFFF;
+
+--card:rgba(255,255,255,.85);
+
+--text:#111827;
+--text-soft:#4B5563;
+
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+background:var(--bg);
+
+color:var(--text);
+
+overflow-x:hidden;
+
+transition:.35s;
+
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+width:10px;
+}
+
+::-webkit-scrollbar-track{
+background:var(--bg);
+}
+
+::-webkit-scrollbar-thumb{
+
+background:linear-gradient(
+180deg,
+#00BFFF,
+#7C3AED
+);
+
+border-radius:999px;
+}
+
+/* FUNDO */
+
+.background{
+
+position:fixed;
+
+inset:0;
+
+z-index:-2;
+
+background:
+radial-gradient(
+circle at 20% 20%,
+rgba(0,191,255,.15),
+transparent 30%
+),
+
+radial-gradient(
+circle at 80% 30%,
+rgba(124,58,237,.15),
+transparent 30%
+),
+
+radial-gradient(
+circle at 50% 80%,
+rgba(0,191,255,.10),
+transparent 35%
+),
+
+var(--bg);
+
+}
+
+/* EFEITO DE BRILHO */
+
+.blur-orb{
+
+position:fixed;
+
+width:450px;
+height:450px;
+
+border-radius:50%;
+
+filter:blur(120px);
+
+z-index:-1;
+
+animation:float 12s infinite linear;
+
+opacity:.35;
+
+}
+
+.orb1{
+
+background:#00BFFF;
+
+top:-100px;
+left:-120px;
+
+}
+
+.orb2{
+
+background:#7C3AED;
+
+bottom:-120px;
+right:-120px;
+
+animation-delay:6s;
+
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(40px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+/* CONTAINER */
+
+.container{
+
+width:min(1200px,90%);
+
+margin:auto;
+
+}
+
+/* TITULOS */
+
+.section-title{
+
+font-size:clamp(
+2rem,
+4vw,
+4rem
+);
+
+font-weight:900;
+
+line-height:1.1;
+
+margin-bottom:20px;
+
+}
+
+.gradient-text{
+
+background:var(--gradient);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
+.section-description{
+
+font-size:1.05rem;
+
+color:var(--text-soft);
+
+line-height:1.8;
+
+max-width:900px;
+
+}
+
+/* CARDS */
+
+.card{
+
+background:var(--card);
+
+backdrop-filter:blur(15px);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:24px;
+
+padding:30px;
+
+transition:.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:var(--shadow);
+
+}
+
+/* BOTÕES */
+
+.btn{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:15px 30px;
+
+border-radius:14px;
+
+text-decoration:none;
+
+font-weight:700;
+
+transition:.3s;
+
+cursor:pointer;
+
+}
+
+.btn-primary{
+
+background:var(--gradient);
+
+color:white;
+
+}
+
+.btn-primary:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+0 0 35px rgba(0,191,255,.35);
+
+}
+
+.btn-secondary{
+
+border:1px solid rgba(255,255,255,.15);
+
+color:var(--text);
+
+}
+
+.btn-secondary:hover{
+
+background:rgba(255,255,255,.06);
+
+}
+
+/* GRID */
+
+.grid{
+
+display:grid;
+
+gap:25px;
+
+}
+
+/* SECTION */
+
+section{
+
+padding:120px 0;
+
+}
+
+/* RESPONSIVO */
+
+@media(max-width:768px){
+
+section{
+padding:90px 0;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<div class="blur-orb orb1"></div>
+
+<div class="blur-orb orb2"></div>
+<nav class="navbar">
+
+<div class="container nav-container">
+
+<div class="logo">
+
+<span class="gradient-text">KILLUA</span> STORE
+
+</div>
+
+<div class="nav-links">
+
+<a href="#sobre">Sobre</a>
+
+<a href="#ia">IA</a>
+
+<a href="#marketplace">Marketplace</a>
+
+<a href="#parcerias">Parcerias</a>
+
+<a href="#faq">FAQ</a>
+
+<a href="#contato">Contato</a>
+
+</div>
+
+<div class="nav-actions">
+
+<button id="themeToggle" class="theme-btn">
+
+🌙
+
+</button>
+
+<a
+href="https://www.instagram.com/killuaoutfit/"
+target="_blank"
+class="btn btn-primary"
+>
+Instagram
+</a>
+
+</div>
+
+</div>
+
+</nav>
+
+<style>
+
+.navbar{
+
+position:fixed;
+
+top:0;
+
+width:100%;
+
+z-index:1000;
+
+padding:20px 0;
+
+background:rgba(0,0,0,.2);
+
+backdrop-filter:blur(20px);
+
+border-bottom:1px solid rgba(255,255,255,.05);
+
+}
+
+.nav-container{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+}
+
+.logo{
+
+font-size:1.5rem;
+
+font-weight:900;
+
+letter-spacing:1px;
+
+}
+
+.nav-links{
+
+display:flex;
+
+gap:30px;
+
+}
+
+.nav-links a{
+
+text-decoration:none;
+
+color:var(--text-soft);
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+color:white;
+
+}
+
+.nav-actions{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+}
+
+.theme-btn{
+
+width:50px;
+
+height:50px;
+
+border-radius:14px;
+
+background:var(--card);
+
+border:none;
+
+color:var(--text);
+
+font-size:1.2rem;
+
+cursor:pointer;
+
+backdrop-filter:blur(20px);
+
+}
+
+@media(max-width:900px){
+
+.nav-links{
+
+display:none;
+
+}
+
+}
+
+</style>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="container hero-container">
+
+<div class="hero-left">
+
+<div class="hero-badge">
+
+🚀 Moda • Tecnologia • Inteligência Artificial
+
+</div>
+
+<h1>
+
+A próxima geração do
+
+<span class="gradient-text">
+
+comércio online
+
+</span>
+
+começa aqui.
+
+</h1>
+
+<p>
+
+A Killua Store une moda, tecnologia,
+inteligência artificial e comunidade em um único ecossistema.
+
+Mais do que uma loja, estamos construindo uma plataforma onde clientes, vendedores, marcas e criadores de conteúdo podem crescer juntos.
+
+</p>
+
+<div class="hero-buttons">
+
+<a
+href="https://www.instagram.com/killuaoutfit/"
+target="_blank"
+class="btn btn-primary"
+>
+
+Conheça a Killua Store
+
+</a>
+
+<a
+href="#sobre"
+class="btn btn-secondary"
+>
+
+Saiba Mais
+
+</a>
+
+</div>
+
+<div class="hero-stats">
+
+<div>
+
+<h2>24h</h2>
+
+<span>Suporte</span>
+
+</div>
+
+<div>
+
+<h2>IA</h2>
+
+<span>Curadoria Inteligente</span>
+
+</div>
+
+<div>
+
+<h2>5%</h2>
+
+<span>Taxa Marketplace</span>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<div class="hero-card">
+
+<h3>🤖 Sistema Inteligente</h3>
+
+<p>
+
+Analisamos avaliações, qualidade,
+preços e reputação para destacar apenas os produtos que realmente valem a pena.
+
+</p>
+
+</div>
+
+<div class="hero-card">
+
+<h3>🏆 Curadoria Killua</h3>
+
+<p>
+
+Nem todo produto entra na plataforma.
+
+Cada item passa por uma avaliação para garantir uma experiência melhor para nossa comunidade.
+
+</p>
+
+</div>
+
+<div class="hero-card">
+
+<h3>🤝 Parcerias</h3>
+
+<p>
+
+Criadores de conteúdo, marcas e vendedores encontram novas oportunidades de crescimento através da Killua Store.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.hero{
+
+min-height:100vh;
+
+display:flex;
+
+align-items:center;
+
+padding-top:150px;
+
+}
+
+.hero-container{
+
+display:grid;
+
+grid-template-columns:1.2fr .8fr;
+
+gap:60px;
+
+align-items:center;
+
+}
+
+.hero-badge{
+
+display:inline-block;
+
+padding:12px 18px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:999px;
+
+margin-bottom:25px;
+
+font-size:.95rem;
+
+}
+
+.hero h1{
+
+font-size:clamp(
+3rem,
+7vw,
+6rem
+);
+
+line-height:1;
+
+font-weight:900;
+
+margin-bottom:25px;
+
+}
+
+.hero p{
+
+font-size:1.15rem;
+
+line-height:1.9;
+
+color:var(--text-soft);
+
+margin-bottom:35px;
+
+}
+
+.hero-buttons{
+
+display:flex;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+margin-bottom:50px;
+
+}
+
+.hero-stats{
+
+display:flex;
+
+gap:40px;
+
+flex-wrap:wrap;
+
+}
+
+.hero-stats h2{
+
+font-size:2rem;
+
+font-weight:900;
+
+}
+
+.hero-stats span{
+
+color:var(--text-soft);
+
+}
+
+.hero-right{
+
+display:flex;
+
+flex-direction:column;
+
+gap:25px;
+
+}
+
+.hero-card{
+
+background:var(--card);
+
+backdrop-filter:blur(20px);
+
+border-radius:24px;
+
+padding:30px;
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.3s;
+
+}
+
+.hero-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:var(--shadow);
+
+}
+
+.hero-card h3{
+
+margin-bottom:15px;
+
+font-size:1.2rem;
+
+}
+
+.hero-card p{
+
+color:var(--text-soft);
+
+line-height:1.7;
+
+}
+
+@media(max-width:950px){
+
+.hero-container{
+
+grid-template-columns:1fr;
+
+}
+
+.hero{
+
+padding-top:140px;
+
+}
+
+}
+
+</style>
+
+<script>
+
+const toggle =
+document.getElementById("themeToggle")
+
+toggle.addEventListener(
+"click",
+()=>{
+
+document.body.classList.toggle(
+"light-mode"
+)
+
+toggle.innerHTML =
+document.body.classList.contains(
+"light-mode"
+)
+?
+"☀️"
+:
+"🌙"
+
+}
+)
+
+</script>
+<!-- SOBRE -->
+
+<section id="sobre">
+
+<div class="container">
+
+<span class="gradient-text">
+SOBRE A KILLUA STORE
+</span>
+
+<h2 class="section-title">
+
+Muito mais do que uma loja.
+
+</h2>
+
+<p class="section-description">
+
+A Killua Store nasceu com uma ideia simples:
+a internet oferece milhões de produtos todos os dias,
+mas encontrar aquilo que realmente vale a pena continua sendo difícil.
+
+Foi pensando nisso que começamos a construir algo diferente.
+
+Mais do que vender produtos, queremos criar um ecossistema onde tecnologia,
+inteligência artificial, moda, criadores de conteúdo,
+vendedores e consumidores trabalhem juntos para gerar experiências melhores.
+
+Hoje, a Killua Store representa muito mais do que roupas ou acessórios.
+
+Representa inovação, curadoria, comunidade e evolução constante.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- MISSÃO VISÃO VALORES -->
+
+<section>
+
+<div class="container">
+
+<div
+class="grid"
+style="
+grid-template-columns:
+repeat(auto-fit,minmax(320px,1fr));
+"
+>
+
+<div class="card">
+
+<h3 class="gradient-text">
+
+🚀 Nossa Missão
+
+</h3>
+
+<br>
+
+<p>
+
+Transformar a forma como as pessoas descobrem produtos online.
+
+Queremos reduzir o tempo gasto procurando,
+comparando e pesquisando,
+permitindo que nossos clientes encontrem opções realmente interessantes
+de maneira mais rápida e segura.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3 class="gradient-text">
+
+🌎 Nossa Visão
+
+</h3>
+
+<br>
+
+<p>
+
+Construir uma das maiores comunidades digitais voltadas para moda,
+tecnologia, lifestyle e consumo inteligente.
+
+Uma plataforma capaz de conectar clientes,
+marcas e criadores em um único ambiente.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3 class="gradient-text">
+
+⭐ Nossos Valores
+
+</h3>
+
+<br>
+
+<p>
+
+Qualidade acima da quantidade.
+
+Transparência acima do marketing.
+
+Tecnologia a serviço das pessoas.
+
+Evolução constante.
+
+Respeito à comunidade.
+
+Inovação sem limites.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- POR QUE CONFIAR -->
+
+<section>
+
+<div class="container">
+
+<h2 class="section-title">
+
+Por que confiar na
+<span class="gradient-text">
+Killua Store?
+</span>
+
+</h2>
+
+<p class="section-description">
+
+Sabemos que confiança não é algo que se pede.
+É algo que se conquista.
+
+Por isso buscamos criar processos capazes de oferecer mais segurança para clientes,
+marcas e vendedores.
+
+</p>
+
+<br><br>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>
+
+🔍 Curadoria Inteligente
+
+</h3>
+
+<br>
+
+<p>
+
+Nem todo produto entra em destaque.
+
+Nossa equipe e nossos sistemas analisam informações importantes antes de recomendar qualquer item.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+🤖 Tecnologia Própria
+
+</h3>
+
+<br>
+
+<p>
+
+Utilizamos inteligência artificial para analisar preços,
+avaliações e reputação dos produtos.
+
+Nosso objetivo é ajudar usuários a tomar decisões melhores.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+💬 Atendimento Humanizado
+
+</h3>
+
+<br>
+
+<p>
+
+Mesmo utilizando tecnologia,
+acreditamos que pessoas continuam sendo essenciais.
+
+Por isso combinamos atendimento humano e IA.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+🛡️ Segurança
+
+</h3>
+
+<br>
+
+<p>
+
+Buscamos trabalhar apenas com vendedores,
+parceiros e marcas que atendam aos critérios da plataforma.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ESTATÍSTICAS -->
+
+<section>
+
+<div class="container">
+
+<h2
+class="section-title"
+style="text-align:center;"
+>
+
+Construindo algo grande.
+
+</h2>
+
+<p
+class="section-description"
+style="
+margin:auto;
+text-align:center;
+"
+>
+
+Estamos apenas começando,
+mas nossa visão vai muito além de uma loja online.
+
+</p>
+
+<br><br><br>
+
+<div
+class="grid"
+style="
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+"
+>
+
+<div class="card" style="text-align:center;">
+
+<h2
+style="
+font-size:3rem;
+font-weight:900;
+"
+>
+
+24h
+
+</h2>
+
+<p>
+Suporte disponível
+</p>
+
+</div>
+
+<div class="card" style="text-align:center;">
+
+<h2
+style="
+font-size:3rem;
+font-weight:900;
+"
+>
+
+IA
+
+</h2>
+
+<p>
+Análise inteligente
+</p>
+
+</div>
+
+<div class="card" style="text-align:center;">
+
+<h2
+style="
+font-size:3rem;
+font-weight:900;
+"
+>
+
+5%
+
+</h2>
+
+<p>
+Taxa para vendedores
+</p>
+
+</div>
+
+<div class="card" style="text-align:center;">
+
+<h2
+style="
+font-size:3rem;
+font-weight:900;
+"
+>
+
+∞
+
+</h2>
+
+<p>
+Potencial de crescimento
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- IA -->
+
+<section id="ia">
+
+<div class="container">
+
+<span class="gradient-text">
+INTELIGÊNCIA ARTIFICIAL
+</span>
+
+<h2 class="section-title">
+
+Uma IA criada para encontrar
+o que realmente vale a pena.
+
+</h2>
+
+<p class="section-description">
+
+Todos os dias milhares de produtos são lançados na internet.
+
+Mas quantidade não significa qualidade.
+
+Por isso desenvolvemos um sistema de inteligência artificial capaz de analisar informações importantes antes de recomendar produtos para nossa comunidade.
+
+Nosso objetivo é ajudar pessoas a economizar tempo, evitar compras ruins e encontrar opções com melhor custo-benefício.
+
+</p>
+
+<br><br><br>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>
+⭐ Avaliações
+</h3>
+
+<br>
+
+<p>
+
+A IA analisa avaliações públicas para identificar padrões positivos e negativos.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+💰 Preços
+</h3>
+
+<br>
+
+<p>
+
+Monitoramento de preços para identificar opções mais competitivas.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+🏆 Qualidade
+</h3>
+
+<br>
+
+<p>
+
+Análise de reputação, feedbacks e informações relevantes sobre produtos.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+🛡️ Confiabilidade
+</h3>
+
+<br>
+
+<p>
+
+Produtos e vendedores passam por critérios de avaliação antes de receber destaque.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- COMO FUNCIONA -->
+
+<section>
+
+<div class="container">
+
+<h2 class="section-title">
+
+Como funciona nossa análise?
+
+</h2>
+
+<p class="section-description">
+
+Transformamos uma enorme quantidade de informações em um processo simples e fácil de entender.
+
+</p>
+
+<br><br><br>
+
+<div class="timeline">
+
+<div class="step">
+
+<div class="step-number">
+1
+</div>
+
+<div class="card">
+
+<h3>
+Produto Encontrado
+</h3>
+
+<p>
+
+O sistema identifica produtos relevantes para análise.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="step">
+
+<div class="step-number">
+2
+</div>
+
+<div class="card">
+
+<h3>
+Análise Inteligente
+</h3>
+
+<p>
+
+A IA verifica avaliações, qualidade, reputação e custo-benefício.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="step">
+
+<div class="step-number">
+3
+</div>
+
+<div class="card">
+
+<h3>
+Validação
+</h3>
+
+<p>
+
+Informações são organizadas para garantir uma visão mais completa.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="step">
+
+<div class="step-number">
+4
+</div>
+
+<div class="card">
+
+<h3>
+Destaque Killua
+</h3>
+
+<p>
+
+Produtos aprovados podem receber destaque na plataforma.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.timeline{
+
+display:flex;
+
+flex-direction:column;
+
+gap:30px;
+
+}
+
+.step{
+
+display:flex;
+
+align-items:center;
+
+gap:20px;
+
+}
+
+.step-number{
+
+min-width:70px;
+min-height:70px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+border-radius:50%;
+
+font-size:1.5rem;
+font-weight:900;
+
+background:var(--gradient);
+
+color:white;
+
+}
+
+@media(max-width:768px){
+
+.step{
+
+flex-direction:column;
+align-items:flex-start;
+
+}
+
+}
+
+</style>
+
+<!-- MARKETPLACE -->
+
+<section id="marketplace">
+
+<div class="container">
+
+<span class="gradient-text">
+MARKETPLACE
+</span>
+
+<h2 class="section-title">
+
+Conectando clientes,
+marcas e vendedores.
+
+</h2>
+
+<p class="section-description">
+
+A Killua Store não trabalha apenas com produtos próprios.
+
+Também abrimos espaço para marcas e vendedores que desejam alcançar novos públicos através de uma plataforma moderna, focada em qualidade e confiança.
+
+Nosso objetivo é criar um ambiente onde todos possam crescer juntos.
+
+</p>
+
+<br><br><br>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>
+👕 Marca Própria
+</h3>
+
+<br>
+
+<p>
+
+Produtos desenvolvidos pela própria Killua Store.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+🏪 Marcas Parceiras
+</h3>
+
+<br>
+
+<p>
+
+Empresas e criadores aprovados podem divulgar seus produtos.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+📈 Crescimento
+</h3>
+
+<br>
+
+<p>
+
+Mais visibilidade para marcas e mais opções para clientes.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+🤝 Comunidade
+</h3>
+
+<br>
+
+<p>
+
+Uma plataforma construída para gerar oportunidades.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- VENDEDORES -->
+
+<section>
+
+<div class="container">
+
+<h2 class="section-title">
+
+Venda através da Killua Store
+
+</h2>
+
+<p class="section-description">
+
+Se você possui uma marca, trabalha com varejo ou está construindo seu próprio negócio, a Killua Store pode ser uma nova vitrine para seus produtos.
+
+Antes da aprovação realizamos uma análise para verificar critérios de qualidade, autenticidade e confiabilidade.
+
+</p>
+
+<br><br>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>
+✅ Processo de Aprovação
+</h3>
+
+<br>
+
+<p>
+
+Análise de autenticidade, qualidade e reputação.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+💬 Atendimento
+</h3>
+
+<br>
+
+<p>
+
+Nossa equipe auxilia clientes e responde dúvidas.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+📦 Divulgação
+</h3>
+
+<br>
+
+<p>
+
+Produtos podem receber exposição através da comunidade Killua Store.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+💸 Apenas 5%
+</h3>
+
+<br>
+
+<p>
+
+Taxa simples e transparente para vendedores parceiros.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- PARCERIAS -->
+
+<section id="parcerias">
+
+<div class="container">
+
+<span class="gradient-text">
+
+PROGRAMA DE PARCERIAS
+
+</span>
+
+<h2 class="section-title">
+
+Criadores ajudam a construir
+o futuro da Killua Store.
+
+</h2>
+
+<p class="section-description">
+
+Acreditamos que grandes comunidades são construídas por pessoas.
+
+Por isso trabalhamos com criadores de conteúdo que compartilham valores como criatividade, autenticidade e conexão com o público.
+
+Não buscamos apenas divulgação.
+
+Buscamos construir relacionamentos duradouros.
+
+</p>
+
+<br><br><br>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>
+🎮 Geek & Games
+</h3>
+
+<br>
+
+<p>
+
+Criadores focados em anime, mangá, jogos, cultura geek, cosplay e entretenimento digital.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+🏋️ Academia & Fitness
+</h3>
+
+<br>
+
+<p>
+
+Influenciadores que inspiram evolução física, disciplina e estilo de vida saudável.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+😂 Humor
+</h3>
+
+<br>
+
+<p>
+
+Criadores capazes de gerar engajamento através de conteúdo divertido e criativo.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+🌎 Lifestyle
+</h3>
+
+<br>
+
+<p>
+
+Pessoas que compartilham rotina, estilo, experiências e tendências.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+🎵 Música
+</h3>
+
+<br>
+
+<p>
+
+Artistas, produtores e criadores que movimentam comunidades através da música.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+⚽ Esportes
+</h3>
+
+<br>
+
+<p>
+
+Criadores ligados ao futebol, vôlei, futsal e outros esportes.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- BENEFÍCIOS -->
+
+<section>
+
+<div class="container">
+
+<h2 class="section-title">
+
+O que oferecemos aos parceiros?
+
+</h2>
+
+<p class="section-description">
+
+Cada parceria é construída pensando no crescimento de ambos os lados.
+
+Nosso objetivo é gerar valor real para criadores e para a comunidade.
+
+</p>
+
+<br><br><br>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>
+
+🎟️ Cupom Exclusivo
+
+</h3>
+
+<br>
+
+<p>
+
+Cada parceiro recebe um cupom personalizado.
+
+Isso permite acompanhar exatamente o impacto gerado pelo criador.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+📦 Press Kit
+
+</h3>
+
+<br>
+
+<p>
+
+Produtos selecionados de acordo com o estilo e o público do criador.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+📈 Bônus de Alcance
+
+</h3>
+
+<br>
+
+<p>
+
+Reconhecemos campanhas que geram visibilidade e fortalecem a marca.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+💰 Bônus por Vendas
+
+</h3>
+
+<br>
+
+<p>
+
+Quanto maior o resultado da parceria, maiores as oportunidades de crescimento.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+🤝 Contratos Profissionais
+
+</h3>
+
+<br>
+
+<p>
+
+Parcerias estruturadas com transparência e objetivos definidos.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+🚀 Crescimento Conjunto
+
+</h3>
+
+<br>
+
+<p>
+
+Não queremos apenas campanhas isoladas.
+
+Queremos construir relações duradouras.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- REQUISITOS -->
+
+<section>
+
+<div class="container">
+
+<h2 class="section-title">
+
+Quem pode participar?
+
+</h2>
+
+<p class="section-description">
+
+Buscamos criadores comprometidos com sua comunidade e que possuam presença ativa em suas plataformas.
+
+</p>
+
+<br><br>
+
+<div class="card">
+
+<h3 class="gradient-text">
+
+Requisitos mínimos
+
+</h3>
+
+<br>
+
+<ul style="line-height:2; padding-left:20px;">
+
+<li>10.000 seguidores ou mais</li>
+
+<li>YouTube</li>
+
+<li>Instagram</li>
+
+<li>TikTok</li>
+
+<li>Twitch</li>
+
+<li>Kick</li>
+
+<li>Produção consistente de conteúdo</li>
+
+<li>Boa relação com a comunidade</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CTA -->
+
+<section>
+
+<div class="container">
+
+<div
+class="card"
+style="
+text-align:center;
+padding:60px;
+"
+>
+
+<h2
+style="
+font-size:3rem;
+margin-bottom:20px;
+"
+>
+
+Pronto para crescer conosco?
+
+</h2>
+
+<p
+class="section-description"
+style="
+margin:auto;
+text-align:center;
+"
+>
+
+Se você é criador de conteúdo,
+possui uma marca ou deseja conhecer mais sobre a Killua Store,
+entre em contato através do Instagram oficial.
+
+</p>
+
+<br><br>
+
+<a
+href="https://www.instagram.com/killuaoutfit/"
+target="_blank"
+class="btn btn-primary"
+>
+
+Entrar em Contato
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+<!-- ROADMAP -->
+
+<section id="roadmap">
+
+<div class="container">
+
+<span class="gradient-text">
+ROADMAP
+</span>
+
+<h2 class="section-title">
+
+Estamos apenas começando.
+
+</h2>
+
+<p class="section-description">
+
+A Killua Store não foi criada pensando apenas no presente.
+
+Estamos construindo uma plataforma que pretende evoluir constantemente, trazendo novas oportunidades para clientes, criadores de conteúdo, vendedores e marcas.
+
+</p>
+
+<br><br><br>
+
+<div class="timeline-roadmap">
+
+<div class="road-item card">
+
+<h3>
+✅ Fundação da Marca
+</h3>
+
+<p>
+
+Criação da identidade da Killua Store e desenvolvimento dos primeiros projetos.
+
+</p>
+
+</div>
+
+<div class="road-item card">
+
+<h3>
+✅ Programa de Parcerias
+</h3>
+
+<p>
+
+Estruturação do sistema para influenciadores e criadores de conteúdo.
+
+</p>
+
+</div>
+
+<div class="road-item card">
+
+<h3>
+✅ Marketplace
+</h3>
+
+<p>
+
+Abertura da plataforma para marcas e vendedores parceiros.
+
+</p>
+
+</div>
+
+<div class="road-item card">
+
+<h3>
+🚧 Expansão da IA
+</h3>
+
+<p>
+
+Novas funcionalidades de análise, comparação e recomendação inteligente.
+
+</p>
+
+</div>
+
+<div class="road-item card">
+
+<h3>
+🔮 Aplicativo Próprio
+</h3>
+
+<p>
+
+Experiência mais rápida, personalizada e integrada para a comunidade.
+
+</p>
+
+</div>
+
+<div class="road-item card">
+
+<h3>
+🌎 Expansão Nacional
+</h3>
+
+<p>
+
+Aumentar a presença da marca e fortalecer a comunidade em todo o Brasil.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.timeline-roadmap{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(300px,1fr));
+
+gap:25px;
+
+}
+
+.road-item{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.road-item::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:0;
+
+width:100%;
+height:4px;
+
+background:var(--gradient);
+
+}
+
+</style>
+
+<!-- FAQ -->
+
+<section id="faq">
+
+<div class="container">
+
+<span class="gradient-text">
+FAQ
+</span>
+
+<h2 class="section-title">
+
+Perguntas Frequentes
+
+</h2>
+
+<p class="section-description">
+
+Algumas das dúvidas mais comuns sobre a Killua Store.
+
+</p>
+
+<br><br>
+
+<div class="faq-container">
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+O que é a Killua Store?
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+
+A Killua Store é uma plataforma que une moda, tecnologia, inteligência artificial, marketplace e comunidade em um único ecossistema.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+Vocês possuem produtos próprios?
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+
+Sim. Além da marca própria, também trabalhamos com produtos e marcas parceiras aprovadas.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+Como funciona a IA da Killua Store?
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+
+A IA auxilia na análise de avaliações, reputação, qualidade e custo-benefício para ajudar na seleção de produtos.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+Posso vender através da plataforma?
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+
+Sim. Marcas e vendedores podem solicitar análise para disponibilizar produtos na plataforma.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+Como participar das parcerias?
+
+</button>
+
+<div class="faq-answer">
+
+<p>
+
+Entre em contato através do Instagram oficial para saber mais sobre os requisitos e oportunidades.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.faq-container{
+
+display:flex;
+flex-direction:column;
+gap:15px;
+
+}
+
+.faq-item{
+
+background:var(--card);
+
+border-radius:20px;
+
+overflow:hidden;
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.faq-question{
+
+width:100%;
+
+padding:25px;
+
+background:none;
+
+border:none;
+
+color:var(--text);
+
+font-size:1rem;
+
+font-weight:700;
+
+text-align:left;
+
+cursor:pointer;
+
+}
+
+.faq-answer{
+
+max-height:0;
+
+overflow:hidden;
+
+transition:.35s ease;
+
+}
+
+.faq-answer p{
+
+padding:0 25px 25px;
+
+color:var(--text-soft);
+
+line-height:1.8;
+
+}
+
+</style>
+
+<script>
+
+document
+.querySelectorAll(".faq-question")
+.forEach(button=>{
+
+button.addEventListener(
+"click",
+()=>{
+
+const answer =
+button.nextElementSibling
+
+if(answer.style.maxHeight){
+
+answer.style.maxHeight=null
+
+}else{
+
+answer.style.maxHeight=
+answer.scrollHeight+"px"
+
+}
+
+})
+
+})
+
+</script>
+
+<!-- CONTATO -->
+
+<section id="contato">
+
+<div class="container">
+
+<div
+class="card"
+style="
+text-align:center;
+padding:80px 40px;
+"
+>
+
+<span class="gradient-text">
+
+CONTATO
+
+</span>
+
+<h2
+class="section-title"
+style="margin-top:20px;"
+>
+
+Faça parte da comunidade.
+
+</h2>
+
+<p
+class="section-description"
+style="
+margin:auto;
+text-align:center;
+max-width:700px;
+"
+>
+
+Seja você um cliente, criador de conteúdo, vendedor ou marca, estamos sempre em busca de novas conexões.
+
+A Killua Store acredita que grandes comunidades são construídas por pessoas que compartilham ideias, criatividade e vontade de evoluir.
+
+</p>
+
+<br><br>
+
+<a
+href="https://www.instagram.com/killuaoutfit/"
+target="_blank"
+class="btn btn-primary"
+>
+
+Instagram Oficial
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container">
+
+<div
+style="
+display:flex;
+justify-content:space-between;
+gap:40px;
+flex-wrap:wrap;
+padding:40px 0;
+"
+>
+
+<div>
+
+<h2>
+
+<span class="gradient-text">
+KILLUA
+</span>
+
+STORE
+
+</h2>
+
+<br>
+
+<p
+style="
+color:var(--text-soft);
+max-width:400px;
+line-height:1.8;
+"
+>
+
+Moda, tecnologia, inteligência artificial e comunidade.
+
+Construindo uma nova forma de conectar pessoas, marcas e oportunidades.
+
+</p>
+
+</div>
+
+<div>
+
+<h3>
+Links Rápidos
+</h3>
+
+<br>
+
+<p><a href="#sobre">Sobre</a></p>
+<p><a href="#ia">IA</a></p>
+<p><a href="#marketplace">Marketplace</a></p>
+<p><a href="#parcerias">Parcerias</a></p>
+<p><a href="#faq">FAQ</a></p>
+
+</div>
+
+<div>
+
+<h3>
+Contato
+</h3>
+
+<br>
+
+<p>
+
+<a
+href="https://www.instagram.com/killuaoutfit/"
+target="_blank"
+>
+
+@killuaoutfit
+
+</a>
+
+</p>
+
+</div>
+
+</div>
+
+<hr
+style="
+border:none;
+height:1px;
+background:rgba(255,255,255,.08);
+margin:20px 0;
+"
+>
+
+<div
+style="
+text-align:center;
+padding-bottom:30px;
+color:var(--text-soft);
+"
+>
+
+© 2026 Killua Store. Todos os direitos reservados.
+
+</div>
+
+</div>
+
+</footer>
+
+</body>
+</html>
